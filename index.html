@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Chatbot</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: #00ffcc; /* Neon cyan */
+    }
+
+    /* Chat Container */
+    #messages {
+      width: 90%;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      padding: 20px;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #messages div {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+      max-width: 70%;
+      word-wrap: break-word;
+    }
+
+    .user {
+      background: linear-gradient(135deg, #ff6f61, #ff4a3d);
+      color: #fff;
+      margin-left: auto;
+      text-align: right;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .bot {
+      background: linear-gradient(135deg, #00ffcc, #00b3a4);
+      color: #000;
+      margin-right: auto;
+      text-align: left;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Buttons */
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: linear-gradient(135deg, #61f4ff, #93ceea);
+      color: #fff;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #ff4a3d, #ff6f61);
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    /* Dropdown */
+    select {
+      padding: 10px;
+      border-radius: 25px;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      margin-bottom: 20px;
+      font-size: 16px;
+      appearance: none;
+      outline: none;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    select:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      #messages {
+        height: 300px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1> Voice Chatbot</h1>
+  <select id="voiceSelect"></select>
+  <div id="messages"></div>
+  <div>
+    <button id="start">Start</button>
+    <button id="stop" style="display: none;">Stop</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
